@@ -3,29 +3,32 @@
     <li class="breadcrumb-item active">Cadastro</li>
 </ol>
 <div class="container">
-    {{ cliente.nome }}
     <form>
         <div class="row">
             <div class="col-md-6">
                 <label>ID:</label>
-                <input type="text" class="form-control" disabled="true" />
+                <input type="text" [ngModel]="cliente.id" name="id"
+                    class="form-control" disabled="true" />
             </div>
 
             <div class="col-md-6">
                 <label>Data Cadastro:</label>
-                <input type="text" class="form-control" disabled="true" />
+                <input type="text" class="form-control" name="dataCadastro"
+                    [ngModel]="cliente.dataCadastro" disabled="true" />
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-6">
                 <label>Nome: *</label>
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control" 
+                    [(ngModel)]="cliente.nome" name="nome" />
             </div>
 
             <div class="col-md-6">
                 <label>CPF: *</label>
-                <input type="text" class="form-control" />
+                <input type="text" class="form-control" 
+                    [(ngModel)]="cliente.cpf" name="cpf" />
             </div>
         </div>
 
