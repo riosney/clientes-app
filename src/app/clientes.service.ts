@@ -15,11 +15,12 @@ export class ClientesService {
     return this.http.post<Cliente>('http://localhost:8081/api/clientes', cliente);
   }
 
-  /*
-  getCliente() : Observable<Cliente[]> {
-    return null;
-  } */
+  
+  getClientes() : Observable<Cliente[]> {
+    return this.http.get<Cliente[]>('http://localhost:8081/api/clientes');
+  }
 
+  /*
   getClientes() : Cliente[]{
     let cliente = new Cliente();
     cliente.id = 1;
@@ -27,6 +28,6 @@ export class ClientesService {
     cliente.dataCadastro = '13/10/2022';
     cliente.cpf = '12345678900'
     return [cliente]
-  }
+  }*/
 
 }
