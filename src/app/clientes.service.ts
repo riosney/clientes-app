@@ -9,18 +9,24 @@ import { Observable } from 'rxjs';
 })
 export class ClientesService {
 
-  constructor( private http: HttpClient ) {
-
-  }
+  constructor( private http: HttpClient ) {}
 
   salvar( cliente: Cliente) : Observable<Cliente>{
     return this.http.post<Cliente>('http://localhost:8081/api/clientes', cliente);
   }
 
-  getCliente() : Cliente {
-    let cliente : Cliente = new Cliente();
-    cliente.nome = 'Fulado de tal';
-    cliente.cpf = '11122233344'
-    return cliente;
+  /*
+  getCliente() : Observable<Cliente[]> {
+    return null;
+  } */
+
+  getClientes() : Cliente[]{
+    let cliente = new Cliente();
+    cliente.id = 1;
+    cliente.nome = 'Fulano';
+    cliente.dataCadastro = '13/10/2022';
+    cliente.cpf = '12345678900'
+    return [cliente]
   }
+
 }
